@@ -161,7 +161,8 @@ namespace HydrusAPI.NET.Client
                 List<string?> entries = new();
                 foreach (var entry in collection)
                     entries.Add(ParameterToString(entry));
-                return string.Join(",", entries);
+                var tagsJson = JsonSerializer.Serialize(entries);
+                return Uri.EscapeDataString(tagsJson);
             }
 
             return Convert.ToString(obj, System.Globalization.CultureInfo.InvariantCulture);
