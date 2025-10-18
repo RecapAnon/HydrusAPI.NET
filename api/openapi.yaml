@@ -17,7 +17,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/api_version_200_response'
+                $ref: "#/components/schemas/api_version_200_response"
           description: A JSON object containing the current API version and Hydrus
             client version.
       security: []
@@ -79,7 +79,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/request_new_permissions_200_response'
+                $ref: "#/components/schemas/request_new_permissions_200_response"
           description: Access key successfully generated
         "403":
           description: "Request denied, likely because the 'add from api request'\
@@ -101,7 +101,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/session_key_200_response'
+                $ref: "#/components/schemas/session_key_200_response"
           description: A JSON object containing the new session key
         "401":
           description: Missing or invalid access key
@@ -121,7 +121,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/verify_access_key_200_response'
+                $ref: "#/components/schemas/verify_access_key_200_response"
           description: JSON object containing permission details if the key is valid.
         "401":
           description: Missing or invalid access key.
@@ -163,19 +163,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_service_200_response'
+                $ref: "#/components/schemas/get_service_200_response"
           description: Service information
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_service_404_response'
+                $ref: "#/components/schemas/get_service_404_response"
           description: Service not found
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_service_400_response'
+                $ref: "#/components/schemas/get_service_400_response"
           description: Invalid or missing parameters
       security:
       - Hydrus-Client-API-Access-Key: []
@@ -193,7 +193,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServicesObject'
+                $ref: "#/components/schemas/ServicesObject"
           description: A JSON object containing the services.
         "401":
           description: Access key or session key missing or invalid.
@@ -214,7 +214,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_files_add_file_request'
+              $ref: "#/components/schemas/add_files_add_file_request"
           application/octet-stream:
             schema:
               description: Raw file bytes to import. No other parameters are supported
@@ -227,7 +227,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_files_add_file_200_response'
+                $ref: "#/components/schemas/add_files_add_file_200_response"
           description: The file was processed successfully.
         "400":
           description: "Bad request, e.g., invalid parameters or incorrect file domain."
@@ -252,7 +252,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_files_delete_files_request'
+              $ref: "#/components/schemas/add_files_delete_files_request"
         required: true
       responses:
         "200":
@@ -284,7 +284,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_files_undelete_files_request'
+              $ref: "#/components/schemas/add_files_undelete_files_request"
         required: true
       responses:
         "200":
@@ -313,7 +313,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClearFileDeletionRecordRequest'
+              $ref: "#/components/schemas/ClearFileDeletionRecordRequest"
         required: true
       responses:
         "200":
@@ -344,7 +344,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MigrateFilesRequest'
+              $ref: "#/components/schemas/MigrateFilesRequest"
         required: true
       responses:
         "200":
@@ -374,7 +374,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ArchiveFilesRequest'
+              $ref: "#/components/schemas/ArchiveFilesRequest"
         required: true
       responses:
         "200":
@@ -405,7 +405,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UnarchiveFilesRequest'
+              $ref: "#/components/schemas/UnarchiveFilesRequest"
         required: true
       responses:
         "200":
@@ -431,7 +431,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_files_generate_hashes_request'
+              $ref: "#/components/schemas/add_files_generate_hashes_request"
           application/octet-stream:
             schema:
               description: Raw file bytes
@@ -443,7 +443,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_files_generate_hashes_200_response'
+                $ref: "#/components/schemas/add_files_generate_hashes_200_response"
           description: JSON object containing file hashes
         "400":
           description: Missing or invalid parameter
@@ -486,7 +486,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_urls_get_url_files_200_response'
+                $ref: "#/components/schemas/add_urls_get_url_files_200_response"
           description: A JSON object containing the files associated with the URL.
         "401":
           description: Missing access key or insufficient permissions.
@@ -519,7 +519,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UrlInfo'
+                $ref: "#/components/schemas/UrlInfo"
           description: Information about the URL.
         "400":
           description: Missing or invalid parameters.
@@ -542,14 +542,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_urls_add_url_request'
+              $ref: "#/components/schemas/add_urls_add_url_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_urls_add_url_200_response'
+                $ref: "#/components/schemas/add_urls_add_url_200_response"
           description: The URL was successfully added.
         "400":
           description: Invalid request parameters.
@@ -574,7 +574,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_urls_associate_url_request'
+              $ref: "#/components/schemas/add_urls_associate_url_request"
         required: true
       responses:
         "200":
@@ -629,7 +629,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_tags_clean_tags_200_response'
+                $ref: "#/components/schemas/add_tags_clean_tags_200_response"
           description: Cleaned tags in Hydrus-normalized form and sorted order.
         "400":
           description: Invalid or missing parameters.
@@ -657,7 +657,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_tags_get_favourite_tags_200_response'
+                $ref: "#/components/schemas/add_tags_get_favourite_tags_200_response"
           description: A list of favourite tags.
         "401":
           description: Missing or invalid access key.
@@ -712,7 +712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetSiblingsAndParentsResponse'
+                $ref: "#/components/schemas/GetSiblingsAndParentsResponse"
           description: A Services Object and a tags object mapping each requested
             tag to its relationships on each service.
         "400":
@@ -829,7 +829,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_tags_search_tags_200_response'
+                $ref: "#/components/schemas/add_tags_search_tags_200_response"
           description: A list of matching tags and their counts.
         "400":
           description: Missing or invalid parameter.
@@ -856,7 +856,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_tags_add_tags_request'
+              $ref: "#/components/schemas/add_tags_add_tags_request"
         required: true
       responses:
         "200":
@@ -887,14 +887,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_tags_set_favourite_tags_request'
+              $ref: "#/components/schemas/add_tags_set_favourite_tags_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_tags_set_favourite_tags_200_response'
+                $ref: "#/components/schemas/add_tags_set_favourite_tags_200_response"
           description: The favourite tags have been successfully updated. Returns
             the new list of favourite tags.
         "400":
@@ -920,7 +920,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/edit_ratings_set_rating_request'
+              $ref: "#/components/schemas/edit_ratings_set_rating_request"
         required: true
       responses:
         "200":
@@ -939,7 +939,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IncrementFileViewtimeRequest'
+              $ref: "#/components/schemas/IncrementFileViewtimeRequest"
         required: true
       responses:
         "200":
@@ -970,7 +970,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/edit_times_set_file_viewtime_request'
+              $ref: "#/components/schemas/edit_times_set_file_viewtime_request"
         required: true
       responses:
         "200":
@@ -1000,7 +1000,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/edit_times_set_time_request'
+              $ref: "#/components/schemas/edit_times_set_time_request"
         required: true
       responses:
         "200":
@@ -1018,14 +1018,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_notes_set_notes_request'
+              $ref: "#/components/schemas/add_notes_set_notes_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_notes_set_notes_200_response'
+                $ref: "#/components/schemas/add_notes_set_notes_200_response"
           description: Notes successfully added or updated
         "400":
           description: Invalid or missing parameters
@@ -1050,7 +1050,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add_notes_delete_notes_request'
+              $ref: "#/components/schemas/add_notes_delete_notes_request"
         required: true
       responses:
         "200":
@@ -1240,7 +1240,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_files_search_files_200_response'
+                $ref: "#/components/schemas/get_files_search_files_200_response"
           description: A list of file IDs and/or hashes matching the search criteria.
         "400":
           description: "Bad request, invalid parameters."
@@ -1313,7 +1313,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_files_file_hashes_200_response'
+                $ref: "#/components/schemas/get_files_file_hashes_200_response"
           description: A mapping of source hashes to desired hash type
         "400":
           description: Bad request (invalid or missing parameters)
@@ -1340,8 +1340,8 @@ paths:
         name: file_id
         required: false
         schema:
-          nullable: true
           type: integer
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -1436,7 +1436,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_files_file_metadata_200_response'
+                $ref: "#/components/schemas/get_files_file_metadata_200_response"
           description: A list of JSON Objects that store a variety of file metadata.
         "401":
           description: Missing access key
@@ -1464,8 +1464,8 @@ paths:
         name: file_id
         required: false
         schema:
-          nullable: true
           type: integer
+          nullable: true
         style: form
       - description: Hexadecimal SHA256 hash for the file. Can only be used if the
           user has access to all files.
@@ -1589,7 +1589,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_files_file_path_200_response'
+                $ref: "#/components/schemas/get_files_file_path_200_response"
           description: "A JSON object containing the file path, type, and size."
         "400":
           description: "Bad request, invalid or missing parameters."
@@ -1644,7 +1644,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_files_thumbnail_path_200_response'
+                $ref: "#/components/schemas/get_files_thumbnail_path_200_response"
           description: Path to the thumbnail on the host system.
         "400":
           description: Bad request. The file does not have a thumbnail.
@@ -1666,7 +1666,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_local_file_storage_locations_200_response'
+                $ref: "#/components/schemas/get_local_file_storage_locations_200_response"
           description: A list of file storage locations and their metadata
         "401":
           description: Missing or invalid access key
@@ -1791,8 +1791,8 @@ paths:
         name: file_id
         required: false
         schema:
-          nullable: true
           type: integer
+          nullable: true
         style: form
       - description: A JSON-encoded and URL-encoded list of file IDs.
         explode: true
@@ -1860,7 +1860,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FileRelationshipsResponse'
+                $ref: "#/components/schemas/FileRelationshipsResponse"
           description: A JSON object mapping file hashes to their relationships.
         "400":
           description: Bad request – missing or invalid parameters.
@@ -1884,10 +1884,10 @@ paths:
         \ specified search domain, based on given filters and search type."
       operationId: manage_file_relationships_get_potentials_count
       parameters:
-      - $ref: '#/components/parameters/file_service_key'
-      - $ref: '#/components/parameters/file_service_keys'
-      - $ref: '#/components/parameters/deleted_file_service_key'
-      - $ref: '#/components/parameters/deleted_file_service_keys'
+      - $ref: "#/components/parameters/file_service_key"
+      - $ref: "#/components/parameters/file_service_keys"
+      - $ref: "#/components/parameters/deleted_file_service_key"
+      - $ref: "#/components/parameters/deleted_file_service_keys"
       - description: "Optional, defaults to 'all known tags'. Hexadecimal tag service\
           \ key."
         explode: true
@@ -1979,7 +1979,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_file_relationships_get_potentials_count_200_response'
+                $ref: "#/components/schemas/manage_file_relationships_get_potentials_count_200_response"
           description: JSON object containing the count of potential duplicate pairs.
         "400":
           description: Bad request due to invalid or missing parameters.
@@ -2142,7 +2142,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_file_relationships_get_potential_pairs_200_response'
+                $ref: "#/components/schemas/manage_file_relationships_get_potential_pairs_200_response"
           description: A list of potential duplicate file hash pairs.
         "400":
           description: "Bad request, invalid or missing parameters."
@@ -2263,18 +2263,18 @@ paths:
         name: max_hamming_distance
         required: false
         schema:
-          nullable: true
           type: integer
+          nullable: true
         style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_file_relationships_get_random_potentials_200_response'
+                $ref: "#/components/schemas/manage_file_relationships_get_random_potentials_200_response"
             application/cbor:
               schema:
-                $ref: '#/components/schemas/manage_file_relationships_get_random_potentials_200_response'
+                $ref: "#/components/schemas/manage_file_relationships_get_random_potentials_200_response"
           description: A JSON Object listing a group of hashes exactly as the client
             would.
         "400":
@@ -2303,7 +2303,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Files'
+              $ref: "#/components/schemas/Files"
         required: true
       responses:
         "200":
@@ -2333,7 +2333,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_file_relationships_set_file_relationships_request'
+              $ref: "#/components/schemas/manage_file_relationships_set_file_relationships_request"
         required: true
       responses:
         "200":
@@ -2355,7 +2355,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_file_relationships_set_kings_request'
+              $ref: "#/components/schemas/manage_file_relationships_set_kings_request"
         required: true
       responses:
         "200":
@@ -2387,7 +2387,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_services_get_pending_counts_200_response'
+                $ref: "#/components/schemas/manage_services_get_pending_counts_200_response"
           description: A JSON object containing services and their pending counts.
         "401":
           description: Missing or invalid access key or insufficient permissions.
@@ -2410,7 +2410,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_services_commit_pending_request'
+              $ref: "#/components/schemas/manage_services_commit_pending_request"
         required: true
       responses:
         "200":
@@ -2445,7 +2445,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_services_forget_pending_request'
+              $ref: "#/components/schemas/manage_services_forget_pending_request"
         required: true
       responses:
         "200":
@@ -2484,7 +2484,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_cookies_get_cookies_200_response'
+                $ref: "#/components/schemas/manage_cookies_get_cookies_200_response"
           description: A JSON Object listing all the cookies for that domain
         "401":
           description: Access key or session key missing.
@@ -2509,14 +2509,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_cookies_set_cookies_request'
+              $ref: "#/components/schemas/manage_cookies_set_cookies_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_cookies_set_cookies_200_response'
+                $ref: "#/components/schemas/manage_cookies_set_cookies_200_response"
           description: Cookies set successfully.
         "400":
           description: Bad request. Missing or invalid parameters.
@@ -2551,7 +2551,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_headers_get_headers_200_response'
+                $ref: "#/components/schemas/manage_headers_get_headers_200_response"
           description: A JSON object listing all headers
         "401":
           description: Missing or invalid access key
@@ -2574,14 +2574,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_headers_set_headers_request'
+              $ref: "#/components/schemas/manage_headers_set_headers_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_headers_set_headers_200_response'
+                $ref: "#/components/schemas/manage_headers_set_headers_200_response"
           description: Headers successfully updated.
         "400":
           description: Bad request. Missing or invalid parameters.
@@ -2609,14 +2609,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_headers_set_user_agent_request'
+              $ref: "#/components/schemas/manage_headers_set_user_agent_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_headers_set_headers_200_response'
+                $ref: "#/components/schemas/manage_headers_set_headers_200_response"
           description: Operation successful
         "400":
           description: "Bad request, typically due to invalid parameters."
@@ -2640,7 +2640,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PagesResponse'
+                $ref: "#/components/schemas/PagesResponse"
           description: A JSON object representing the page structure.
         "401":
           description: Missing or invalid access key.
@@ -2686,7 +2686,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageInfoResponse'
+                $ref: "#/components/schemas/PageInfoResponse"
           description: A JSON object containing the page's information.
         "400":
           description: Invalid or missing parameters.
@@ -2711,7 +2711,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_pages_add_files_request'
+              $ref: "#/components/schemas/manage_pages_add_files_request"
         required: true
       responses:
         "200":
@@ -2742,7 +2742,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_pages_focus_page_request'
+              $ref: "#/components/schemas/manage_pages_focus_page_request"
         required: true
       responses:
         "200":
@@ -2771,7 +2771,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_pages_refresh_page_request'
+              $ref: "#/components/schemas/manage_pages_refresh_page_request"
         required: true
       responses:
         "200":
@@ -2824,7 +2824,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JobStatus'
+                $ref: "#/components/schemas/JobStatus"
           description: A JobStatus object.
         "401":
           description: Missing or invalid access key.
@@ -2859,7 +2859,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JobStatusesResponse'
+                $ref: "#/components/schemas/JobStatusesResponse"
           description: A list of job status objects representing popups.
         "401":
           description: Access key or session key missing or invalid.
@@ -2879,14 +2879,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_add_popuip_request'
+              $ref: "#/components/schemas/manage_popups_add_popuip_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JobStatusObject'
+                $ref: "#/components/schemas/JobStatusObject"
           description: Job status object was successfully added.
         "400":
           description: "Bad request, missing or invalid parameters."
@@ -2911,7 +2911,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_call_user_callable_request'
+              $ref: "#/components/schemas/manage_popups_call_user_callable_request"
         required: true
       responses:
         "200":
@@ -2939,7 +2939,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_cancel_popup_request'
+              $ref: "#/components/schemas/manage_popups_cancel_popup_request"
         required: true
       responses:
         "200":
@@ -2959,7 +2959,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_dismiss_popup_request'
+              $ref: "#/components/schemas/manage_popups_dismiss_popup_request"
         required: true
       responses:
         "200":
@@ -2991,7 +2991,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_finish_popup_request'
+              $ref: "#/components/schemas/manage_popups_finish_popup_request"
         required: true
       responses:
         "200":
@@ -3012,7 +3012,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_finish_and_dismiss_popup_request'
+              $ref: "#/components/schemas/manage_popups_finish_and_dismiss_popup_request"
         required: true
       responses:
         "200":
@@ -3041,14 +3041,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/manage_popups_update_popuip_request'
+              $ref: "#/components/schemas/manage_popups_update_popuip_request"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_popups_update_popuip_200_response'
+                $ref: "#/components/schemas/manage_popups_update_popuip_200_response"
           description: Job status object updated.
         "400":
           description: Invalid or missing parameter.
@@ -3208,7 +3208,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/manage_database_mr_bones_200_response'
+                $ref: "#/components/schemas/manage_database_mr_bones_200_response"
           description: A JSON object containing the database statistics.
         "400":
           description: Bad request. Missing or invalid parameters.
@@ -3307,7 +3307,7 @@ components:
   schemas:
     ServicesObject:
       additionalProperties:
-        $ref: '#/components/schemas/Service'
+        $ref: "#/components/schemas/Service"
     Service:
       example:
         service_key: service_key
@@ -3352,8 +3352,6 @@ components:
         - hashes
         - hashes
         hash: hash
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: A numerical file id.
@@ -3371,6 +3369,7 @@ components:
             description: A list of hexadecimal SHA256 hashes.
             type: string
           type: array
+      nullable: true
     MigrateFilesRequest:
       description: Request body for migrating files to one or more local file domains.
       example:
@@ -3390,8 +3389,6 @@ components:
         - hashes
         deleted_file_service_key: deleted_file_service_key
         hash: hash
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: A specific file ID to migrate.
@@ -3428,6 +3425,7 @@ components:
               here).
             type: string
           type: array
+      nullable: true
     ArchiveFilesRequest:
       description: "A request to archive files. Can specify files via file_id, file_ids,\
         \ hash, or hashes."
@@ -3467,8 +3465,6 @@ components:
         - hashes
         - hashes
         hash: hash
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: A single file ID to unarchive.
@@ -3486,6 +3482,7 @@ components:
             description: A list of hexadecimal SHA256 hashes of files to unarchive.
             type: string
           type: array
+      nullable: true
     UrlInfo:
       example:
         url_type_string: url_type_string
@@ -3549,17 +3546,16 @@ components:
       properties:
         services:
           additionalProperties:
-            $ref: '#/components/schemas/Service'
+            $ref: "#/components/schemas/Service"
         tags:
           additionalProperties:
             additionalProperties:
-              $ref: '#/components/schemas/GetSiblingsAndParentsResponse_tags_value_value'
+              $ref: "#/components/schemas/GetSiblingsAndParentsResponse_tags_value_value"
       required:
       - services
       - tags
     IncrementFileViewtimeRequest:
       additionalProperties: false
-      anyOf: []
       example:
         canvas_type: 1
         file_id: 0
@@ -3574,8 +3570,6 @@ components:
         hash: hash
         views: 2
         timestamp: 5.962133916683182
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: A numerical file id.
@@ -3611,6 +3605,7 @@ components:
       required:
       - canvas_type
       - viewtime
+      nullable: true
     SelectiveParameter:
       description: Only one of `hash` or `file_id` should be provided
       type: object
@@ -3641,15 +3636,15 @@ components:
         thumbnail_height:
           type: integer
         duration:
-          nullable: true
           type: integer
+          nullable: true
         time_modified:
-          nullable: true
           type: integer
+          nullable: true
         time_modified_details:
           type: object
         file_services:
-          $ref: '#/components/schemas/FileMetadata_file_services'
+          $ref: "#/components/schemas/FileMetadata_file_services"
         ipfs_multihashes:
           type: object
         has_audio:
@@ -3659,11 +3654,11 @@ components:
         pixel_hash:
           type: string
         num_frames:
-          nullable: true
           type: integer
+          nullable: true
         num_words:
-          nullable: true
           type: integer
+          nullable: true
         is_inbox:
           type: boolean
         is_local:
@@ -3690,7 +3685,7 @@ components:
           type: object
         file_viewing_statistics:
           items:
-            $ref: '#/components/schemas/FileMetadata_file_viewing_statistics_inner'
+            $ref: "#/components/schemas/FileMetadata_file_viewing_statistics_inner"
           type: array
     FileRelationship:
       example:
@@ -3776,7 +3771,7 @@ components:
       properties:
         file_relationships:
           additionalProperties:
-            $ref: '#/components/schemas/FileRelationship'
+            $ref: "#/components/schemas/FileRelationship"
       required:
       - file_relationships
     Files:
@@ -3790,8 +3785,6 @@ components:
         - hashes
         - hashes
         hash: hash
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: The unique ID of a file to remove potential relationships for.
@@ -3813,6 +3806,7 @@ components:
             format: hex
             type: string
           type: array
+      nullable: true
     PagesResponse:
       example:
         hydrus_version: 6
@@ -3835,7 +3829,7 @@ components:
           description: Hydrus client version.
           type: integer
         pages:
-          $ref: '#/components/schemas/Page'
+          $ref: "#/components/schemas/Page"
     Page:
       example:
         page_key: page_key
@@ -3869,7 +3863,7 @@ components:
           type: boolean
         pages:
           items:
-            $ref: '#/components/schemas/Page'
+            $ref: "#/components/schemas/Page"
           type: array
     PageInfoResponse:
       example:
@@ -3933,9 +3927,9 @@ components:
           description: Hydrus client version.
           type: integer
         page_info:
-          $ref: '#/components/schemas/PageInfoResponse_page_info'
+          $ref: "#/components/schemas/PageInfoResponse_page_info"
         media:
-          $ref: '#/components/schemas/PageInfoResponse_media'
+          $ref: "#/components/schemas/PageInfoResponse_media"
     WatcherImport:
       example:
         watcher_key: cf8c3525c57a46b0e5c2625812964364a2e801f8c49841c216b8f8d7a4d06d85
@@ -3986,9 +3980,9 @@ components:
           example: gundam pictures
           type: string
         imports:
-          $ref: '#/components/schemas/ImportInfo'
+          $ref: "#/components/schemas/ImportInfo"
         gallery_log:
-          $ref: '#/components/schemas/ImportInfo'
+          $ref: "#/components/schemas/ImportInfo"
     ImportInfo:
       example:
         simple_status: 4
@@ -4114,12 +4108,12 @@ components:
           description: Arbitrary data for API clients.
           type: object
         files:
-          $ref: '#/components/schemas/JobStatus_files'
+          $ref: "#/components/schemas/JobStatus_files"
         user_callable_label:
           description: Label for the button to trigger a user callable function.
           type: string
         network_job:
-          $ref: '#/components/schemas/JobStatus_network_job'
+          $ref: "#/components/schemas/JobStatus_network_job"
       required:
       - creation_time
       - key
@@ -4211,7 +4205,7 @@ components:
       properties:
         job_statuses:
           items:
-            $ref: '#/components/schemas/JobStatus'
+            $ref: "#/components/schemas/JobStatus"
           type: array
       required:
       - job_statuses
@@ -4238,21 +4232,21 @@ components:
         has_error:
           type: boolean
         total_data_used:
-          nullable: true
           type: integer
+          nullable: true
         is_done:
           type: boolean
         status_text:
           type: string
         current_speed:
-          nullable: true
           type: integer
+          nullable: true
         bytes_read:
-          nullable: true
           type: integer
+          nullable: true
         bytes_to_read:
-          nullable: true
           type: integer
+          nullable: true
     JobStatusObject:
       example:
         attached_files_mergable: true
@@ -4310,7 +4304,7 @@ components:
           description: Custom data associated with the job.
           type: object
         files:
-          $ref: '#/components/schemas/JobStatusObject_files'
+          $ref: "#/components/schemas/JobStatusObject_files"
     api_version_200_response:
       example:
         hydrus_version: 6
@@ -4319,8 +4313,8 @@ components:
         version:
           type: integer
         hydrus_version:
-          nullable: true
           type: integer
+          nullable: true
       required:
       - hydrus_version
       - version
@@ -4360,8 +4354,8 @@ components:
         basic_permissions:
           description: List of permission codes the key grants.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         human_description:
           description: A human-readable description of the permissions granted.
@@ -4389,7 +4383,7 @@ components:
           type_pretty: local tag service
       properties:
         service:
-          $ref: '#/components/schemas/get_service_200_response_service'
+          $ref: "#/components/schemas/get_service_200_response_service"
     get_service_404_response:
       example:
         error: error
@@ -4452,8 +4446,6 @@ components:
     add_files_delete_files_request:
       example:
         hash: 78f92ba4a786225ee2a1236efa6b7dc81dd729faf4af99f96f3e20bad6d8b538
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: A single file ID to delete.
@@ -4494,9 +4486,8 @@ components:
         reason:
           description: Optional reason for the deletion.
           type: string
-    add_files_undelete_files_request:
-      anyOf: []
       nullable: true
+    add_files_undelete_files_request:
       properties:
         file_id:
           description: A single file ID to undelete.
@@ -4536,6 +4527,7 @@ components:
               Optional list of deleted file service keys (hexadecimal) to restrict undeletion from.
             type: string
           type: array
+      nullable: true
     add_files_generate_hashes_request:
       example:
         path: E:\to_import\ayanami.jpg
@@ -4597,7 +4589,7 @@ components:
           type: string
         url_file_statuses:
           items:
-            $ref: '#/components/schemas/add_urls_get_url_files_200_response_url_file_statuses_inner'
+            $ref: "#/components/schemas/add_urls_get_url_files_200_response_url_file_statuses_inner"
           type: array
     add_urls_add_url_request:
       example:
@@ -4643,8 +4635,7 @@ components:
           type: boolean
         service_keys_to_additional_tags:
           additionalProperties:
-            items:
-              type: string
+            items: {}
           description: "Tags to be added to the imported file, mapped by service key."
         filterable_tags:
           description: Tags to be filtered and processed by the tag import options.
@@ -4669,12 +4660,12 @@ components:
         hash: 529af82eee3660008a51823ee4ca0c40d1b4d59b6e2f7418e8b23f2d9c01b1fb
       properties:
         file_id:
-          nullable: true
           type: integer
+          nullable: true
         file_ids:
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           example: 529af82eee3660008a51823ee4ca0c40d1b4d59b6e2f7418e8b23f2d9c01b1fb
@@ -4757,8 +4748,8 @@ components:
         value:
           type: string
         count:
-          nullable: true
           type: integer
+          nullable: true
       required:
       - count
       - value
@@ -4780,7 +4771,7 @@ components:
           type: integer
         tags:
           items:
-            $ref: '#/components/schemas/add_tags_search_tags_200_response_tags_inner'
+            $ref: "#/components/schemas/add_tags_search_tags_200_response_tags_inner"
           type: array
       required:
       - hydrus_version
@@ -4806,8 +4797,8 @@ components:
         file_ids:
           description: List of numerical IDs for multiple files.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           description: SHA256 hash of a single file.
@@ -4819,8 +4810,7 @@ components:
           type: array
         service_keys_to_tags:
           additionalProperties:
-            items:
-              type: string
+            items: {}
           description: Maps service keys to lists of tags to be added to the files.
         service_keys_to_actions_to_tags:
           additionalProperties:
@@ -4828,7 +4818,7 @@ components:
               description: "Maps service keys to actions (as strings) and lists of\
                 \ tags. Each tag can be a string or a [tag, reason] pair."
               items:
-                $ref: '#/components/schemas/add_tags_add_tags_request_service_keys_to_actions_to_tags_value_value_inner'
+                $ref: "#/components/schemas/add_tags_add_tags_request_service_keys_to_actions_to_tags_value_value_inner"
         override_previously_deleted_mappings:
           default: true
           description: "If true, allows overriding mappings previously deleted. If\
@@ -4840,8 +4830,6 @@ components:
             \ on the file. If false, only deletes existing mappings."
           type: boolean
     add_tags_set_favourite_tags_request:
-      nullable: true
-      oneOf: []
       properties:
         set:
           description: "If provided, this list will completely overwrite the existing\
@@ -4860,6 +4848,7 @@ components:
           items:
             type: string
           type: array
+      nullable: true
     add_tags_set_favourite_tags_200_response:
       example:
         hydrus_version: 6
@@ -4880,19 +4869,17 @@ components:
             type: string
           type: array
     edit_ratings_set_rating_request_rating:
-      nullable: true
       oneOf:
       - description: Boolean value for Like/Dislike ratings.
         type: boolean
       - description: Integer value for Numerical or Inc/Dec ratings.
         type: integer
+      nullable: true
     edit_ratings_set_rating_request:
-      anyOf: []
       example:
         hash: 3b820114f658d768550e4e3d4f1dced3ff8db77443472b5ad93700647ad2d3ba
         rating_service_key: 282303611ba853659aa60aeaa5b6312d40e05b58822c52c57ae5e320882ba26e
         rating: 2
-      nullable: true
       properties:
         hash:
           description: SHA256 hash of the file.
@@ -4916,21 +4903,20 @@ components:
           - 12345
           - 67890
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         rating_service_key:
           description: Hexadecimal key of the rating service.
           example: 282303611ba853659aa60aeaa5b6312d40e05b58822c52c57ae5e320882ba26e
           type: string
         rating:
-          $ref: '#/components/schemas/edit_ratings_set_rating_request_rating'
+          $ref: "#/components/schemas/edit_ratings_set_rating_request_rating"
       required:
       - rating
       - rating_service_key
-    edit_times_set_file_viewtime_request:
       nullable: true
-      oneOf: []
+    edit_times_set_file_viewtime_request:
       properties:
         file_id:
           description: A numerical file ID.
@@ -4938,8 +4924,8 @@ components:
         file_ids:
           description: An array of numerical file IDs.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           description: A hexadecimal SHA256 hash.
@@ -4969,9 +4955,8 @@ components:
       - canvas_type
       - views
       - viewtime
-    edit_times_set_time_request:
       nullable: true
-      oneOf: []
+    edit_times_set_time_request:
       properties:
         file_id:
           description: A numerical file id.
@@ -4979,8 +4964,8 @@ components:
         file_ids:
           description: A list of numerical file ids.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           description: A hexadecimal SHA256 hash.
@@ -4991,11 +4976,11 @@ components:
             type: string
           type: array
         timestamp:
-          nullable: true
           type: number
-        timestamp_ms:
           nullable: true
+        timestamp_ms:
           type: integer
+          nullable: true
         timestamp_type:
           description: The type of timestamp you are editing.
           type: integer
@@ -5011,6 +4996,7 @@ components:
           type: string
       required:
       - timestamp_type
+      nullable: true
     add_notes_set_notes_request:
       description: Notes to associate with the file
       properties:
@@ -5055,8 +5041,6 @@ components:
         - note name
         - another note
         hash: 3b820114f658d768550e4e3d4f1dced3ff8db77443472b5ad93700647ad2d3ba
-      nullable: true
-      oneOf: []
       properties:
         note_names:
           description: A list of note names to delete from the file.
@@ -5070,6 +5054,7 @@ components:
         file_id:
           description: Numerical identifier for the file.
           type: integer
+      nullable: true
     get_files_search_files_200_response:
       example:
         file_ids:
@@ -5085,8 +5070,8 @@ components:
           - 4852415
           - 123
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hashes:
           description: A list of SHA256 hashes.
@@ -5180,10 +5165,10 @@ components:
       properties:
         services:
           additionalProperties:
-            $ref: '#/components/schemas/Service'
+            $ref: "#/components/schemas/Service"
         metadata:
           items:
-            $ref: '#/components/schemas/FileMetadata'
+            $ref: "#/components/schemas/FileMetadata"
           type: array
     get_files_file_path_200_response:
       example:
@@ -5234,8 +5219,8 @@ components:
         max_num_bytes:
           description: "Maximum number of bytes allowed in this location, or null\
             \ if unlimited"
-          nullable: true
           type: integer
+          nullable: true
         prefixes:
           items:
             description: List of file hash prefixes stored in this location
@@ -5259,7 +5244,7 @@ components:
       properties:
         locations:
           items:
-            $ref: '#/components/schemas/get_local_file_storage_locations_200_response_locations_inner'
+            $ref: "#/components/schemas/get_local_file_storage_locations_200_response_locations_inner"
           type: array
       required:
       - locations
@@ -5358,11 +5343,9 @@ components:
       properties:
         relationships:
           items:
-            $ref: '#/components/schemas/manage_file_relationships_set_file_relationships_request_relationships_inner'
+            $ref: "#/components/schemas/manage_file_relationships_set_file_relationships_request_relationships_inner"
           type: array
     manage_file_relationships_set_kings_request:
-      nullable: true
-      oneOf: []
       properties:
         file_id:
           description: The file ID to promote to king of its duplicate group.
@@ -5372,8 +5355,8 @@ components:
             \ files belong to the same group, the last one in the list becomes the\
             \ king."
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           description: The SHA256 hash of the file to promote.
@@ -5385,6 +5368,7 @@ components:
           items:
             type: string
           type: array
+      nullable: true
     manage_services_get_pending_counts_200_response_pending_counts_value:
       properties:
         pending_tag_mappings:
@@ -5450,10 +5434,10 @@ components:
       properties:
         services:
           additionalProperties:
-            $ref: '#/components/schemas/Service'
+            $ref: "#/components/schemas/Service"
         pending_counts:
           additionalProperties:
-            $ref: '#/components/schemas/manage_services_get_pending_counts_200_response_pending_counts_value'
+            $ref: "#/components/schemas/manage_services_get_pending_counts_200_response_pending_counts_value"
     manage_services_commit_pending_request:
       example:
         service_key: ae91919b0ea95c9e636f877f57a69728403b65098238c1a121e5ebf85df3b87e
@@ -5523,8 +5507,8 @@ components:
         type: 0
       properties:
         type:
-          nullable: true
           type: integer
+          nullable: true
         data:
           type: string
       required:
@@ -5558,10 +5542,10 @@ components:
           type: 0
       properties:
         network_context:
-          $ref: '#/components/schemas/manage_headers_get_headers_200_response_network_context'
+          $ref: "#/components/schemas/manage_headers_get_headers_200_response_network_context"
         headers:
           additionalProperties:
-            $ref: '#/components/schemas/manage_headers_get_headers_200_response_headers_value'
+            $ref: "#/components/schemas/manage_headers_get_headers_200_response_headers_value"
       required:
       - headers
       - network_context
@@ -5604,7 +5588,7 @@ components:
           nullable: true
         headers:
           additionalProperties:
-            $ref: '#/components/schemas/manage_headers_set_headers_request_headers_value'
+            $ref: "#/components/schemas/manage_headers_set_headers_request_headers_value"
     manage_headers_set_headers_200_response:
       example:
         hydrus_version: 6
@@ -5626,8 +5610,6 @@ components:
             \ will be restored."
           type: string
     manage_pages_add_files_request:
-      nullable: true
-      oneOf: []
       properties:
         page_key:
           description: The page key for the page you wish to add files to.
@@ -5638,8 +5620,8 @@ components:
         file_ids:
           description: An array of file IDs to add to the page.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         hash:
           description: A single file hash (hex SHA256) to add to the page.
@@ -5651,6 +5633,7 @@ components:
           type: array
       required:
       - page_key
+      nullable: true
     manage_pages_focus_page_request:
       example:
         page_key: af98318b6eece15fef3cf0378385ce759bfe056916f6e12157cd928eb56c1f18
@@ -5668,8 +5651,6 @@ components:
     manage_popups_add_popuip_request:
       example:
         status_text_1: Note to user
-      nullable: true
-      oneOf: []
       properties:
         is_cancellable:
           description: Whether the popup job can be cancelled.
@@ -5692,15 +5673,15 @@ components:
         popup_gauge_1:
           description: "A gauge represented as a two-element array [current, max]."
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         popup_gauge_2:
           description: "A second gauge represented as a two-element array [current,\
             \ max]."
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         api_data:
           description: Optional JSON object to associate with the popup.
@@ -5715,6 +5696,7 @@ components:
           type: array
       required:
       - status_text_1
+      nullable: true
     manage_popups_call_user_callable_request:
       example:
         job_status_key: abee8b37d47dba8abf82638d4afb1d11586b9ef7be634aeb8ae3bcb8162b2c86
@@ -5774,15 +5756,15 @@ components:
         popup_gauge_1:
           description: "Gauge values as [current, max]."
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
           nullable: true
         popup_gauge_2:
           description: "Second gauge values as [current, max]."
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
           nullable: true
         api_data:
@@ -5802,8 +5784,8 @@ components:
         file_ids:
           description: List of numerical file IDs to attach.
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
           nullable: true
       required:
@@ -5832,7 +5814,7 @@ components:
           api_data: "{}"
       properties:
         job_status:
-          $ref: '#/components/schemas/JobStatusObject'
+          $ref: "#/components/schemas/JobStatusObject"
     manage_database_mr_bones_200_response_boned_stats:
       example:
         total_alternate_files: 265
@@ -5880,8 +5862,8 @@ components:
           - 2932
           - 83021
           items:
-            nullable: true
             type: integer
+            nullable: true
           type: array
         total_alternate_files:
           example: 265
@@ -5916,7 +5898,7 @@ components:
           size_deleted: 13742290193
       properties:
         boned_stats:
-          $ref: '#/components/schemas/manage_database_mr_bones_200_response_boned_stats'
+          $ref: "#/components/schemas/manage_database_mr_bones_200_response_boned_stats"
     GetSiblingsAndParentsResponse_tags_value_value:
       example:
         ideal_tag: ideal_tag
@@ -5966,8 +5948,8 @@ components:
         viewtime:
           type: number
         last_viewed_timestamp:
-          nullable: true
           type: number
+          nullable: true
     PageInfoResponse_page_info_management_multiple_watcher_import:
       example:
         highlight: highlight
@@ -6013,7 +5995,7 @@ components:
       properties:
         watcher_imports:
           items:
-            $ref: '#/components/schemas/WatcherImport'
+            $ref: "#/components/schemas/WatcherImport"
           type: array
         highlight:
           description: Hexadecimal key of the highlighted watcher.
@@ -6063,7 +6045,7 @@ components:
               status: 4 successful (2 already in db)
       properties:
         multiple_watcher_import:
-          $ref: '#/components/schemas/PageInfoResponse_page_info_management_multiple_watcher_import'
+          $ref: "#/components/schemas/PageInfoResponse_page_info_management_multiple_watcher_import"
     PageInfoResponse_page_info:
       example:
         page_key: page_key
@@ -6130,7 +6112,7 @@ components:
           description: Whether the page is a media page.
           type: boolean
         management:
-          $ref: '#/components/schemas/PageInfoResponse_page_info_management'
+          $ref: "#/components/schemas/PageInfoResponse_page_info_management"
       required:
       - is_media_page
       - management
