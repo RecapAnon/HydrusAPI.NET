@@ -211,7 +211,7 @@ namespace HydrusAPI.NET.Api
     /// <summary>
     /// The <see cref="IGetServicesApiResponse"/>
     /// </summary>
-    public interface IGetServicesApiResponse : HydrusAPI.NET.Client.IApiResponse, IOk<HydrusAPI.NET.Model.Dictionary<string, Service>?>
+    public interface IGetServicesApiResponse : HydrusAPI.NET.Client.IApiResponse, IOk<Dictionary<string, Service>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -1243,11 +1243,11 @@ namespace HydrusAPI.NET.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public HydrusAPI.NET.Model.Dictionary<string, Service>? Ok()
+            public Dictionary<string, Service>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<HydrusAPI.NET.Model.Dictionary<string, Service>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, Service>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1256,7 +1256,7 @@ namespace HydrusAPI.NET.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out HydrusAPI.NET.Model.Dictionary<string, Service>? result)
+            public bool TryOk([NotNullWhen(true)]out Dictionary<string, Service>? result)
             {
                 result = null;
 
